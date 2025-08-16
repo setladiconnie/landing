@@ -37,19 +37,40 @@ body{
   font-size:1.05rem;
 }
 
+/* ---------- HERO LAYOUT ---------- */
 .hero{
   padding:48px 0 20px;
 }
+
+/* Grid with left column spanning two rows; image above CTA on right */
 .hero-grid{
   display:grid;
   grid-template-columns: 1.1fr .9fr;
-  gap:42px;
-  align-items:center;
-}
-@media (max-width: 900px){
-  .hero-grid{ grid-template-columns: 1fr; }
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "copy image"
+    "copy cta";
+  gap:32px;
+  align-items:start;
 }
 
+.hero-copy{ grid-area: copy; }
+.hero-image{ grid-area: image; }
+.hero-cta{ grid-area: cta; }
+
+@media (max-width: 900px){
+  .hero-grid{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "copy"
+      "image"
+      "cta";
+    gap:20px;
+  }
+}
+
+/* ---------- HERO CONTENT ---------- */
 .eyebrow{
   color:var(--accent-deep);
   font-weight:700;
@@ -76,7 +97,7 @@ h1 .sub{ font-size: clamp(1.2rem, 1.2vw + .8rem, 1.6rem); font-weight:700; }
   flex-wrap:wrap;
   gap:10px 14px;
   padding:0;
-  margin:0 0 22px 0;
+  margin: 0;
   list-style:none;
 }
 .pill-list li{
@@ -88,6 +109,7 @@ h1 .sub{ font-size: clamp(1.2rem, 1.2vw + .8rem, 1.6rem); font-weight:700; }
   font-size:.9rem;
 }
 
+/* ---------- CTA CARD (under image) ---------- */
 .cta-card{
   background:var(--card);
   border-radius: var(--radius);
@@ -100,20 +122,9 @@ h1 .sub{ font-size: clamp(1.2rem, 1.2vw + .8rem, 1.6rem); font-weight:700; }
   font-size:1.25rem;
 }
 .cta-card p{ margin:6px 0 14px; color:var(--muted); }
-.btn{
-  display:inline-block;
-  padding:12px 18px;
-  border-radius: 12px;
-  background: var(--accent);
-  color:white;
-  text-decoration:none;
-  font-weight:700;
-  transition:.2s transform ease;
-}
-.btn:hover{ transform: translateY(-1px); }
 .privacy{ font-size:.85rem; color:#976f61; margin-top:10px; }
 
-.hero-image{ width:100%; }
+/* ---------- IMAGE CARD ---------- */
 .image-card{
   margin:0;
   background: var(--bg-2);
@@ -135,6 +146,7 @@ h1 .sub{ font-size: clamp(1.2rem, 1.2vw + .8rem, 1.6rem); font-weight:700; }
   color:#b16559;
 }
 
+/* ---------- FEATURES ---------- */
 .features{
   background: linear-gradient(180deg, transparent, #fff);
   padding: 36px 0 70px;
@@ -178,6 +190,7 @@ h1 .sub{ font-size: clamp(1.2rem, 1.2vw + .8rem, 1.6rem); font-weight:700; }
 .feature h4{ margin:0 0 4px 0; font-size:1rem; }
 .feature p{ margin:0; color:var(--muted); font-size:.95rem; }
 
+/* ---------- FOOTER ---------- */
 .site-footer{
   border-top:1px solid #f1e8e4;
   padding:24px 0;

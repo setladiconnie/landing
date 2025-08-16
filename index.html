@@ -5,18 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>5 Mistakes Stealing Your Glow</title>
   <meta name="description" content="A free guide to help you fix your skin and glow confidently." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- MailerLite Universal (paste your account ID and keep this once) -->
+  <!-- MailerLite Universal (keep only one copy site-wide) -->
   <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
     l=d.createElement(e),l.async=1,l.src=u,
     n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
     (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1728208'); /* ← replace with your account ID if different */
+    ml('account', '1728208'); /* replace if your account id differs */
   </script>
   <!-- End MailerLite Universal -->
 </head>
@@ -31,6 +32,7 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
+        <!-- LEFT: copy -->
         <div class="hero-copy">
           <p class="eyebrow">Free guide</p>
           <h1>
@@ -46,28 +48,27 @@
             <li>Beginner-friendly</li>
             <li>Instant download</li>
           </ul>
+        </div>
 
-          <!-- Call to action card with form -->
+        <!-- RIGHT TOP: image -->
+        <div class="hero-image">
+          <figure class="image-card">
+            <!-- replace src with your own image if you like -->
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1600&auto=format&fit=crop"
+                 alt="Glow with confidence" />
+            <figcaption>Glow with confidence ✨</figcaption>
+          </figure>
+        </div>
+
+        <!-- RIGHT BOTTOM: CTA (form under image) -->
+        <div class="hero-cta">
           <div class="cta-card">
             <h2>Get the Free Guide</h2>
             <p>Pop in your email and we’ll send it right away.</p>
-
-            <!-- MailerLite embed target -->
+            <!-- MailerLite form -->
             <div class="ml-embedded" data-form="XE8T1M"></div>
-            <!-- If you need a fallback button for testing without ML, uncomment:
-            <a class="btn" href="#!">Send me the guide</a>
-            -->
             <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
           </div>
-        </div>
-
-        <div class="hero-image">
-          <!-- Replace with your image (host in repo as /images/hero.jpg) -->
-          <figure class="image-card">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1600&auto=format&fit=crop"
-                 alt="Diverse women with glowing skin" />
-            <figcaption>Glow with confidence ✨</figcaption>
-          </figure>
         </div>
       </div>
     </section>
