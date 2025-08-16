@@ -37,32 +37,31 @@ body{
   font-size:1.05rem;
 }
 
-/* ---------- HERO LAYOUT ---------- */
+/* ---------- HERO FLEX LAYOUT ---------- */
 .hero{
   padding:48px 0 20px;
 }
 
-/* Left column spans both rows, right side has image + CTA stacked */
-.hero-grid{
-  display:grid;
-  grid-template-columns: 1.1fr .9fr;
-  grid-template-rows: auto auto;
-  gap:32px;
-  align-items:start;
+.hero-flex{
+  display:flex;
+  flex-wrap:wrap;
+  gap:40px;
+  align-items:flex-start;
 }
-.hero-copy  { grid-column: 1; grid-row: 1 / span 2; }
-.hero-image { grid-column: 2; grid-row: 1; }
-.hero-cta   { grid-column: 2; grid-row: 2; }
 
-@media (max-width: 900px){
-  .hero-grid{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap:20px;
-  }
-  .hero-copy  { grid-column: 1; grid-row: 1; }
-  .hero-image { grid-column: 1; grid-row: 2; }
-  .hero-cta   { grid-column: 1; grid-row: 3; }
+/* Left side copy */
+.hero-copy{
+  flex:1 1 45%;
+  min-width:280px;
+}
+
+/* Right side: image + form in a column */
+.hero-right{
+  flex:1 1 50%;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  min-width:280px;
 }
 
 /* ---------- HERO CONTENT ---------- */
