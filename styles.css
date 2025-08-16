@@ -3,7 +3,7 @@
   --bg-2: #ffffff;
   --text: #1b1b1b;
   --muted: #6b6b6b;
-  --accent: #ff6b8a;       /* pink coral */
+  --accent: #ff6b8a;
   --accent-deep: #ff5176;
   --pill: #ffe1e8;
   --card: #fff4ef;
@@ -42,32 +42,27 @@ body{
   padding:48px 0 20px;
 }
 
-/* Grid with left column spanning two rows; image above CTA on right */
+/* Left column spans both rows, right side has image + CTA stacked */
 .hero-grid{
   display:grid;
   grid-template-columns: 1.1fr .9fr;
   grid-template-rows: auto auto;
-  grid-template-areas:
-    "copy image"
-    "copy cta";
   gap:32px;
   align-items:start;
 }
-
-.hero-copy{ grid-area: copy; }
-.hero-image{ grid-area: image; }
-.hero-cta{ grid-area: cta; }
+.hero-copy  { grid-column: 1; grid-row: 1 / span 2; }
+.hero-image { grid-column: 2; grid-row: 1; }
+.hero-cta   { grid-column: 2; grid-row: 2; }
 
 @media (max-width: 900px){
   .hero-grid{
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "copy"
-      "image"
-      "cta";
     gap:20px;
   }
+  .hero-copy  { grid-column: 1; grid-row: 1; }
+  .hero-image { grid-column: 1; grid-row: 2; }
+  .hero-cta   { grid-column: 1; grid-row: 3; }
 }
 
 /* ---------- HERO CONTENT ---------- */
@@ -109,7 +104,7 @@ h1 .sub{ font-size: clamp(1.2rem, 1.2vw + .8rem, 1.6rem); font-weight:700; }
   font-size:.9rem;
 }
 
-/* ---------- CTA CARD (under image) ---------- */
+/* ---------- CTA CARD ---------- */
 .cta-card{
   background:var(--card);
   border-radius: var(--radius);
